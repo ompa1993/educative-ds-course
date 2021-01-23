@@ -1,0 +1,37 @@
+The three cases are given below:
+
+Deletion at Leaf Node
+Deletion at Parent Node
+Node has only one child
+Node has two children
+Now let’s look at all the case one by one.
+----------------------------------------------------------------------------------------------------------------------
+
+Deletion at Leaf Node #
+If the node we want to delete is present at the leaf node in a Binary Search Tree, we simply remove that leaf node.
+After deletion, its parent node will point to null. If the leaf node was the left child of Node X, then make leftChild of Node X null;
+if it was the right one, then make the rightChild pointer of node X point to null. See the following example for clarification:
+
+Deletion at Parent Node #
+Deletion at the Parent Node is further sub-divided into two cases:
+
+----------------------------------------------------------------------------------------------------------------------
+Parent node with only one child
+Parent node with two children
+Parent Node with only one Child #
+If the parent node that you want to delete has only one child, then delete the parent node first. After doing that,
+take the deleted parent-node’s child and link it with the parent node of the deleted node.
+Now the parent of the deleted node will become the parent of the child node.
+
+----------------------------------------------------------------------------------------------------------------------
+Parent Node has Two Children #
+It is a little more complex than the first two cases. Here’s the list of steps you perform when deleting a parent node
+with two children in a BST:
+
+Start by traversing the right subtree of the soon-to-be deleted parent node in such a way that you reach the left-most
+value—the value that will appear to be the smallest value in the whole subtree.
+
+Replace the value of the node, found in the last step, with the parent’s node value.
+Or, don't replace, just get the value of the leastNode. and remove the least node and then put the value of least node as the value of current node
+
+Finally, delete the leaf node.
